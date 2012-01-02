@@ -1,0 +1,1532 @@
+<html>
+<head>
+  <title>Welcome to TicketWeb!</title>
+<link href="http://i.ticketweb.com/commons.css" rel="stylesheet" type="text/css">
+<link href="http://i.ticketweb.com/consumer.css" rel="stylesheet" type="text/css">
+<link href="http://i.ticketweb.com/container.css" rel="styleSheet" type="text/css">
+
+<style type="text/css">
+.yui-panel .container-close {
+	position:absolute;
+	top:5px;
+	right:4px;
+	z-index:6;
+	height:12px;
+	width:12px;
+	margin:0px;
+	padding:0px;
+	background:url(http://i.ticketweb.com/img/common/close.gif) no-repeat;
+	cursor:pointer;
+	visibility:inherit;
+}
+</style>
+    <script src="http://i.ticketweb.com/js/yahoo-dom-event.js" type="text/javascript"></script>
+    <script src="http://i.ticketweb.com/js/yahoo-min.js" type="text/javascript"></script>
+    <script src="http://i.ticketweb.com/js/animation-min.js" type="text/javascript"></script>
+    <script src="http://i.ticketweb.com/js/connection-min.js" type="text/javascript"></script>
+    <script src="http://i.ticketweb.com/js/container-min.js" type="text/javascript"></script>
+    <script src="http://i.ticketweb.com/js/event-min.js" type="text/javascript"></script>
+    <script src="http://i.ticketweb.com/js/proto-15-sc-b-and-e-17-compressed.js" type="text/javascript"></script>
+    <script src="http://i.ticketweb.com/js/twlib.js" type="text/javascript"></script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<table width="820" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+    <a href="/"><img src="http://i.ticketweb.com/img/logos/tw_getin_261x40.gif" width="261" height="40" border="0" ></a><br>
+</td>
+<td align="right">
+    <img src="http://i.ticketweb.com/img/layout/purpleswoosh.gif" width="69" height="40" border="0" ><br>
+</td>
+<td class="bgcolor-verydarkpurple">
+    <table width="100%" border="0" cellspacing="0" cellpadding="4">
+    <tr>
+    <td>&nbsp;</td>
+<td class="navLg">
+<script type="text/javascript">
+<!--
+function checkCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++)
+    {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+    //displayCorrectLinks();
+// -->
+</script>
+<script type="text/javascript">
+<!--
+if(checkCookie('MYTW_SIGNEDIN_COOKIE') != null){
+        document.write("<a href=\"/t3/consumer/myticketweb/Home\" onmouseover=this.style.cursor='pointer'>");
+        document.write("My Account");
+        document.write("</a>");
+}
+// -->
+</script>
+</td>
+
+    <td>&nbsp;</td>
+    <td class="navLg"><a href="/t3/sale/OrderStatusFind">Order Status</a></td>
+    <td>&nbsp;</td>
+    <td class="navLg">
+
+   	<a href="#" onclick="javascript:window.open('https://www.hostedsupport.com/support/index.cfm?C=1246','XLCSI','scrollbars,top=0,left=0'); return false;">
+
+    Help Desk
+    </a>
+    </td>
+    <td>&nbsp;</td>
+    <td class="navLg"><a href="/t3/sale/DisplayCart?dispatch=showCart">Shopping Cart</a></td>
+    <td>&nbsp;</td>
+    </tr>
+    </table>
+
+</td>
+</tr>
+<tr>
+<td colspan="2">
+      <script type="text/javascript">
+<!--
+function displayCorrectLinks(){
+
+if(readCookie('MYTW_SIGNEDIN_COOKIE') != null){
+     document.getElementById('signOutLink').style.display="none";
+     document.getElementById('signedInLink').style.display="";
+     var bitname = checkCookie('TW_MYTW_NAME_COOKIE');
+        if (bitname != null) {
+        var decodedname = Base64.decode(bitname);
+        var innerString =  "<span class=\"bodytxtSmBoldPurple\"> Hello, "+decodedname+"</span>"+
+        " ( Not "+decodedname+"? &nbsp"+
+        "<a onmouseover=this.style.cursor='pointer' onclick=\"directSignOut();\">"+
+        "<u>Click Here</u>"+
+        "</a>&nbsp";
+        }
+        if(document.title!="Review Order"){
+            innerString = innerString+" | "+
+            "<a onmouseover=this.style.cursor='pointer' onclick=\"showSignOut();\"/>"+
+            "<u>Sign Out</u>"+
+            "</a>"+
+            "</a> )";
+            }
+         $('signedInLink').innerHTML= innerString;
+}else{
+     document.getElementById('signedInLink').style.display="none";
+     document.getElementById('signOutLink').style.display="";
+ }
+ //to prevent links from showing up on order status and conf pages
+ var confTitle = "Thank you, your order is complete!";
+ if((document.title ==confTitle)){
+  document.getElementById('signOutLink').style.display="none";
+  document.getElementById('signedInLink').style.display="none";
+
+ }
+}
+
+document.write("<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"4\">\n");
+document.write("<tr>\n");
+document.write("<td align=\"left\" valign=\"top\" class=\"typehead\">\n");
+document.write("<span id=\"signedInLink\" style=\"text-transform:none;\">");
+var bitname = readCookie('TW_MYTW_NAME_COOKIE');
+if (bitname != null) {
+    var decodedname = Base64.decode(bitname);
+    document.write("Hello, "+decodedname);
+    document.write(" ( Not "+decodedname+"? &nbsp");
+    document.write("<a onmouseover=this.style.cursor='pointer' onclick=\"directSignOut();\">");
+    document.write("<u>Click Here</u>");
+    document.write("</a>&nbsp");
+}
+
+    document.write(" | ");
+    document.write("<a onmouseover=this.style.cursor='pointer' onclick=\"showSignOut();\">");
+    document.write("<u>Sign Out</u>");
+    document.write("</a>");
+    document.write("</a> )");
+
+document.write("</span>");
+
+document.write("<span id=\"signOutLink\" style=\"text-transform: none\">");
+document.write("You are not currently logged in.&nbsp;");
+document.write("<a onmouseover=this.style.cursor='pointer' onclick=\"showLogin();\">");
+document.write("<u>Click Here</u>");
+document.write("</a>");
+document.write("&nbsp;to log in </span>");
+document.write("</td>");
+document.write("</tr>\n");
+document.write("</table>\n");
+
+displayCorrectLinks();
+// -->
+</script>
+
+</td>
+<td height="20" align="right" valign="bottom" class="navSmGray">
+
+
+    <a href="http://www.ticketweb.co.uk/">TicketWeb UK</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://www.ticketweb.ca/">TicketWeb Canada</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://event.ticketweb.com/about/selltickets.html">Sell Tickets with Us</a>&nbsp;&nbsp;&nbsp;
+    <a href="/t3/user/SignIn">Client Sign-In</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+
+<style type="text/css">
+.inputBorderFix{
+    -moz-appearance: textfield;
+    padding: 1px 0 1px 0;
+    border: 2px inset ThreeDFace;
+    background-color: -moz-Field;
+    color: -moz-FieldText;
+    line-height: normal !important;
+    text-rendering: optimizeLegibility;
+}
+</style>
+<SCRIPT type="text/javascript">
+
+var validateFlag="true";
+var loginDialog;
+var signOutDialog;
+var statusTitle="Order Status";
+var frontdoorTitle="Welcome to TicketWeb!";
+var updatePwdDialog;
+var savedEml;
+function initDivs(){
+  $('forgotDialog').hide();
+  $('consumerLogin').show();
+  $('loginDialog').show();
+  $('login_error_msg').hide();
+  $('eml').value="";
+  $('pwd').value="";
+  $('isBillingPage').value="false";
+  $('isBillingPage2').value="false";
+}
+
+function extractIFrameBody(iFrameEl) {
+  /**
+    Reference: michael@mahemoff.com
+    http://ajaxify.com/run/iframe/
+    http://ajaxpatterns.org/IFrame_Call
+
+    under the Creative Commons Licence
+    http://creativecommons.org/licenses/by/2.0/
+  */
+
+  var doc = null;
+  if (iFrameEl.contentDocument) { // For NS6
+    doc = iFrameEl.contentDocument;
+  } else if (iFrameEl.contentWindow) { // For IE5.5 and IE6
+    doc = iFrameEl.contentWindow.document;
+  } else if (iFrameEl.document) { // For IE5
+    doc = iFrameEl.document;
+  } else {
+    return null;
+  }
+  return doc.body;
+
+}
+
+
+function showLogin(){
+
+if(loginDialog==null){
+initLoginDialog();
+}
+initDivs();
+ if($('salePayment')!=null){
+    var billingError = $('billingError').value;
+    $('login_error_msg').innerHTML=billingError;
+    $('login_error_msg').show();
+    $('billingError').value="";
+
+  }
+loginDialog.show();
+}
+
+
+function showSignOut(){
+if(signOutDialog==null){
+initSignOut();
+}
+signOutDialog.show();
+}
+
+function directSignOut(){
+if(signOutDialog==null){
+initSignOut();
+}
+signOut();
+}
+
+function showUpdatePassword(){
+if(updatePwdDialog==null){
+    initUpdatePasswordDialog();
+}
+updatePwdDialog.show();
+}
+
+
+function signOut()
+{
+   $('isBillingPage2').value="false";
+  if($('salePayment')!=null){
+    $('isBillingPage2').value="true"
+    document.signOutForm.submit();
+  }else{
+   var url = document.signOutForm.signoutUrl.value;
+   var iFrameBody = extractIFrameBody($("signOutFrame"));
+   iFrameBody.innerHTML =
+      "<form action='https://www.ticketweb.com/t3/consumer/myticketweb/SignOut' method='POST'>" +
+        "<input type='text' name='url' value='"+url+"'>" +
+        "<input type='text' name='billingPageFlag' value='false'>" +
+      "</form>";
+   var subForm = iFrameBody.firstChild;
+   subForm.submit();
+ }
+}
+
+function submitform()
+{
+  loginDialog.validate();
+
+  if(validateFlag == "true"){
+     if($('salePayment')!=null){
+        $('isBillingPage').value="true"
+        document.loginForm.submit();
+
+       }else{
+
+           savedEml=document.loginForm.email.value;
+          var eml = document.loginForm.email.value;
+          var pwd = document.loginForm.password.value;
+          var url = document.loginForm.url.value;
+         var iFrameBody = extractIFrameBody($("iFrame"));
+          iFrameBody.innerHTML =null;
+          iFrameBody.innerHTML =
+              "<form id=\"subFrm\" action='https://www.ticketweb.com/t3/consumer/myticketweb/SignIn' method='POST'>" +
+                "<input type='text' name='email' value='"+eml+"'>" +
+                "<input type='password' name='password' value='"+pwd+"'>" +
+                "<input type='text' name='url' value='"+url+"'>" +
+                "<input type='text' name='billingPageFlag' value='false'>" +
+              "</form>";
+          var subForm = iFrameBody.firstChild;
+          subForm.submit();
+    }
+  }
+  else{
+    return false;
+  }
+}
+
+function onIFrameLoad(){
+ if(loginDialog==null){
+   initLoginDialog();
+ }
+
+  displayCorrectLinks();
+
+ var subform=extractIFrameBody($("iFrame")).getElementsByTagName("textarea");
+ if(subform[0]!=null){
+   var jsonText = subform[0].innerHTML;
+   var jsonObj = eval('(' + jsonText + ')');
+   if(jsonObj.status=='SignInError'){
+     showLogin();
+     $('login_error_msg').innerHTML=jsonObj.error;
+     $('login_error_msg').show();
+
+    }
+
+   if(jsonObj.status=='SignInOk'){
+       loginDialog.hide();
+
+      /*
+       hackery for reloading Order status page on sign in. so that the alternate will call link can surface
+      */
+     if((document.title ==statusTitle)){
+       window.location.reload();
+     }
+
+     if((document.title == frontdoorTitle)){
+     window.location="http://www.ticketweb.com/t3/consumer/myticketweb/Home";
+     }
+
+     if((document.title == 'MyTicketWeb Home')){
+     window.location="http://www.ticketweb.com/t3/consumer/myticketweb/Home";
+     }
+
+   }
+
+   if(jsonObj.status=='SignInReset'){
+       loginDialog.hide();
+       showUpdatePassword();
+
+      /*if((document.title == frontdoorTitle)){
+          window.location="http://www.ticketweb.com/t3/consumer/myticketweb/PasswordReset";
+      }*/
+     }
+}
+}
+
+function onSignOutFrameLoad(){
+
+ if(signOutDialog==null){
+   initSignOut();
+ }
+
+ displayCorrectLinks();
+
+ var subform=extractIFrameBody($("signOutFrame")).getElementsByTagName("textarea");
+
+ if(subform[0]!=null){
+   var jsonText = subform[0].innerHTML;
+   var jsonObj = eval('(' + jsonText + ')');
+
+   if(jsonObj.status=='SignOutError'){
+     signOutDialog.hide();
+    }
+
+   if(jsonObj.status=='SignOutOk'){
+          signOutDialog.hide();
+      /*
+       hackery for reloading Order status page on sign in. so that the alternate will call link can surface
+      */
+     if((document.title ==statusTitle)){
+       window.location.reload();
+     }
+     //send back to frontdoor
+     window.location="http://www.ticketweb.com/";
+   }
+ }
+}
+
+function onUpdatePasswordFrameLoad(){
+  if(updatePwdDialog==null){
+      initUpdatePasswordDialog();
+  }
+
+  displayCorrectLinks();
+
+  var subform=extractIFrameBody($("updatePasswordFrame")).getElementsByTagName("textarea");
+  if(subform[0]!=null){
+    var jsonText = subform[0].innerHTML;
+    var jsonObj = eval('(' + jsonText + ')');
+    if(jsonObj.status=='SignIn'){
+        updatePwdDialog.hide();
+       /*
+        hackery for reloading Order status page on sign in. so that the alternate will call link can surface
+       */
+      if((document.title ==statusTitle)){
+        window.location.reload();
+      }
+      if((document.title == 'MyTicketWeb Home')){
+    	     window.location="http://www.ticketweb.com/t3/consumer/myticketweb/Home";
+    	     }
+
+      if((document.title == frontdoorTitle)){
+             window.location="http://www.ticketweb.com/t3/consumer/myticketweb/Home";
+             }
+    }
+  }
+ }
+
+function showPasswordDialog(){
+validateFlag="true";
+$('login_error_msg').hide();
+document.forgotPasswordForm.forgotEmail.value=document.loginForm.email.value;;
+new Effect.Fade('loginDialog',{duration:1});
+new Effect.Appear('forgotDialog',{duration:3});
+}
+
+function submitPassword(){
+loginDialog.validateForgotLink();
+  if(validateFlag == "true"){
+          var eml = document.forgotPasswordForm.forgotEmail.value;
+          var url = document.forgotPasswordForm.url.value;
+          var iFrameBody = extractIFrameBody($("iFrame"));
+          iFrameBody.innerHTML =
+              "<form action='https://www.ticketweb.com/t3/consumer/myticketweb/forgotPasswordRandom' method='POST'>" +
+                "<input type='text' name='email' value='"+eml+"'>" +
+                "<input type='text' name='url' value='"+url+"'>" +
+              "</form>";
+          var subForm = iFrameBody.firstChild;
+          subForm.submit();
+  }else{
+  return false;
+  }
+}
+
+function updatePassword()
+{
+  updatePwdDialog.validate();
+
+  if(validateFlag == "true"){
+     if($('salePayment')!=null){
+        $('isBillingPage').value="true"
+        document.updatePasswordForm.submit();
+       }else{
+    	    var eml = document.updatePasswordForm.update_email.value;
+            var pwd = document.updatePasswordForm.update_password.value;
+            var confPwd = document.updatePasswordForm.update_confPassword.value;
+            var url = document.updatePasswordForm.update_url.value;
+         var iFrameBody = extractIFrameBody($("updatePasswordFrame"));
+          iFrameBody.innerHTML =null;
+          iFrameBody.innerHTML =
+              "<form id=\"subFrm\" action='https://www.ticketweb.com/t3/consumer/myticketweb/UpdatePassword' method='POST'>" +
+                "<input type='text' name='update_email' value='"+eml+"'>" +
+                "<input type='password' name='update_password' value='"+pwd+"'>" +
+                "<input type='password' name='update_confPassword' value='"+confPwd+"'>" +
+                "<input type='text' name='update_url' value='"+url+"'>" +
+                "<input type='text' name='billingPageFlag' value='false'>" +
+              "</form>";
+          var subForm = iFrameBody.firstChild;
+          subForm.submit();
+    }
+  }
+  else{
+    return false;
+  }
+}
+
+function initLoginDialog() {
+                    // Define various event handlers for Dialog
+                    document.getElementById("consumerLogin").style.display="";
+                    //$('consumerLogin').show();
+                    var currentUrl = document.location.href;
+                    if(currentUrl.indexOf("pl=")==-1)
+                    {
+                     currentUrl=currentUrl+"&pl="
+                    }
+                    var pLableCode = "";
+                    document.getElementById("url").value=currentUrl;
+                    document.getElementById("forgotUrl").value=currentUrl;
+
+                    document.getElementById("pl").value=pLableCode;
+                    document.getElementById("forgotPl").value=pLableCode;
+
+                    // Instantiate the Dialog
+                    loginDialog  = new YAHOO.widget.Dialog("consumerLogin", {underlay:"matte",effect:{effect:YAHOO.widget.ContainerEffect.FADE,duration:0.45},
+                                                                         width : "350px",draggable:false,modal:true,
+                                                                         fixedcenter : true,
+                                                                         visible : false,
+                                                                         constraintoviewport : true
+                                                            } );
+
+                    loginDialog.validateForgotLink = function(){
+
+                    var data = $('forgotEmail').value;
+                      if ((!checkEmail(data))||(data=="")) {
+                            $('login_error_msg').innerHTML='Please enter a valid email address';
+                            $('login_error_msg').show();
+                            validateFlag="false" ;
+                            return false;
+                        }
+                        validateFlag="true" ;
+                        return true;
+                    }
+
+                    loginDialog.validate = function() {
+                        var data = this.getData();
+
+                        if ((!checkEmail(data.email))||(data.email=="")) {
+                            $('login_error_msg').innerHTML='Please enter a valid email address';
+                            $('login_error_msg').show();
+                            validateFlag="false" ;
+                            return false;
+                        }
+
+                        if (data.password == "") {
+                            $('login_error_msg').innerHTML='Please enter your password';
+                            $('login_error_msg').show();
+                            validateFlag="false" ;
+                            return false;
+                        }
+
+                        if (data.password.length < 5) {
+                            $('login_error_msg').innerHTML='Password should be a minimum of 5 characters';
+                            $('login_error_msg').show();
+                            validateFlag="false" ;
+                            return false;
+                        }
+
+                        validateFlag="true" ;
+                        return true;
+                    };
+
+                     // Wire up the success and failure handlers
+
+                    loginDialog.render();
+                    YAHOO.util.Event.addListener("hideLogin", "click", loginDialog.hide,loginDialog,true);
+                    YAHOO.util.Event.addListener("hideForgotPassword", "click", loginDialog.hide,loginDialog,true);
+                }
+
+
+
+function initSignOut() {
+                document.getElementById("logout").style.display="";
+                var currentUrl = document.location.href;
+                if(currentUrl.indexOf("pl=")==-1)
+                {
+                  currentUrl=currentUrl+"&pl="
+                }
+
+                var pLableCode = "";
+
+                document.getElementById("signoutPl").value=pLableCode;
+                document.getElementById("signoutUrl").value=currentUrl;
+
+                    // Instantiate the Dialog
+                     signOutDialog= new YAHOO.widget.Dialog("logout",  {underlay:"matte",effect:{effect:YAHOO.widget.ContainerEffect.FADE,duration:0.45},
+                                                                         width : "300px",draggable:false,modal:true,
+                                                                         fixedcenter : true,
+                                                                         visible : false,
+                                                                         constraintoviewport : true
+                                                            } );
+
+                    // Render the Dialog
+                    signOutDialog.render();
+
+                    YAHOO.util.Event.addListener("hideSignOut", "click", signOutDialog.hide,signOutDialog,true);
+
+                }
+
+function initUpdatePasswordDialog(){
+
+      // Define various event handlers for Dialog
+    document.getElementById("updatePwdDialog").style.display="";
+    var currentUrl = document.location.href;
+    if(currentUrl.indexOf("pl=")==-1)
+    {
+     currentUrl=currentUrl+"&pl="
+    }
+    var pLableCode = "";
+    document.getElementById("update_eml").value=savedEml;
+    document.getElementById("update_Url").value=currentUrl;
+    document.getElementById("update_Pl").value=pLableCode;
+
+    // Instantiate the Dialog
+    updatePwdDialog  = new YAHOO.widget.Dialog("updatePwdDialog", {underlay:"matte",effect:{effect:YAHOO.widget.ContainerEffect.FADE,duration:0.45},
+                                                         width : "400px",draggable:false,modal:true,
+                                                         fixedcenter : true,
+                                                         visible : false,
+                                                         constraintoviewport : true
+                                            } );
+
+    updatePwdDialog.validate = function() {
+        var data = this.getData();
+
+        if ((!checkEmail(data.update_email))||(data.update_email=="")) {
+            $('u_login_error_msg').innerHTML='Please enter your valid email address';
+            $('u_login_error_msg').show();
+            validateFlag="false" ;
+            return false;
+        }
+
+        if (data.update_password == "") {
+            $('u_login_error_msg').innerHTML='Please enter your new password';
+            $('u_login_error_msg').show();
+            validateFlag="false" ;
+            return false;
+        }
+        if (data.update_confPassword == "") {
+            $('u_login_error_msg').innerHTML='Please enter your new password again for confirmation';
+            $('u_login_error_msg').show();
+            validateFlag="false" ;
+            return false;
+        }
+        if (data.update_password != data.update_confPassword){
+            $('u_login_error_msg').innerHTML='The passwords entered do not match, please try again';
+            $('u_login_error_msg').show();
+            validateFlag="false" ;
+            return false;
+        }
+        if (data.update_password.length < 5) {
+            $('u_login_error_msg').innerHTML='Password should be a minimum of 5 characters';
+            $('u_login_error_msg').show();
+            validateFlag="false" ;
+            return false;
+        }
+
+        validateFlag="true" ;
+        return true;
+    };
+
+     // Wire up the success and failure handlers
+
+    updatePwdDialog.render();
+    YAHOO.util.Event.addListener("hideUpdatePassword", "click", updatePwdDialog.hide,updatePwdDialog,true);
+}
+
+</script>
+
+
+<script type="text/javascript">
+<!--
+var secureUrl = document.location.href;
+if(secureUrl.indexOf("https")==-1){
+    document.write("<iframe id=\"iFrame\" STYLE=\"visibility: hidden;\" height=\"1PX\"></iframe>");
+    document.write("<iframe id=\"signOutFrame\" STYLE=\"visibility: hidden;\" height=\"1PX\" ></iframe>");
+    document.write("<iframe id=\"updatePasswordFrame\" STYLE=\"visibility: hidden;\" height=\"1PX\" ></iframe>");
+}else{
+  document.write("<iframe id=\"iFrame\" src=\"/consumer/myticketweb/secure/signouthelper\" STYLE=\"visibility: hidden;\" height=\"1PX\"></iframe>");
+  document.write("<iframe id=\"signOutFrame\" src=\"/consumer/myticketweb/secure/signouthelper\" STYLE=\"visibility: hidden;\" height=\"1PX\" ></iframe>");
+  document.write("<iframe id=\"updatePasswordFrame\" src=\"/consumer/myticketweb/secure/signouthelper\" STYLE=\"visibility: hidden;\" height=\"1PX\" ></iframe>");
+}
+// -->
+</script>
+  <div id="consumerLogin" style="display:none">
+  <br><br>
+  <span id='login_error_msg' class="msg-err" style="display:none">&nbsp;</span>
+
+  <div id="loginDialog" style="display:none">
+    <br>
+    <div style="clear:both"></div>
+    <span style="float:left;padding-left:35px;color:#420085;font-weight:bold;font-size:17px">Log in to your MyTicketWeb account</span>
+
+    <div id="formDiv">
+    <form id="lForm" name="loginForm" method="POST" action="https://www.ticketweb.com/t3/consumer/myticketweb/SignIn">
+      <div style="clear:both"></div>
+      <br>
+
+       <label style="float: left; text-align: right; display:block; width: 120px;" for="email"><strong>Email Address:</strong></label>
+       <input style="float: left; margin-left: 10px;font-size:12px" type="text" class="inputBorderFix" id="eml" name="email" value="" maxlength=32 size=21/>
+       <input type="hidden" id="url" name="url" value="">
+       <input type="hidden" id="pl" name="pl" value="">
+
+       <input type="hidden" id="isBillingPage" name="billingPageFlag" value="false">
+
+       <div style="clear:both"></div>
+       <br>
+      <label style="float: left; text-align: right; display:block; width: 120px;" for="password"><b>Password:</b></label>
+      <input style="float: left; margin-left: 10px;font-size:12px" type="password" class="inputBorderFix" id="pwd" name="password" value="" maxlength=16 size=21/>
+      <br>
+      <div STYLE="float: left; padding-left: 130px;">
+        <a id="forgotLink" onmouseover="this.style.cursor='pointer';" onclick="showPasswordDialog();">
+
+        <u><span class="bodytxtSmBoldPurple">Forgot your Password?</span></u></a>
+       </div>
+        <div style="clear:both"></div>
+         <br>
+      <input type="submit" style="float:left;margin-left:130px;font-size: 11px;" value="Sign In" onclick="submitform();return false;"/>
+      <script type="text/javascript">
+       <!--
+       if(document.title!="Billing Information"){
+         document.write("<input id=\"hideLogin\" style=\"float:left;margin-left:20px;font-size: 11px;\" type=\"submit\" value=\"Cancel\" onclick=\"return false;\"/>");
+        }
+       // -->
+      </script>
+
+
+     <div style="clear:both"></div>
+
+     <script type="text/javascript">
+      <!--
+      if(document.title=="Billing Information"){
+        document.write("<div style=\"padding-top:5px\">");
+        document.write("<input id=\"hideLogin\" style=\"float:left;margin-left:130px;background-color:#420085;color:#FFFFFF;font-weight:bold;font-size:13px;\" type=\"submit\" value=\"Skip and Continue\" onclick=\"return false;\"/>");
+        document.write("</div>");
+       }
+      // -->
+     </script>
+     <div style="clear:both"></div>
+     <br>
+    </form>
+    <div STYLE="float:left;padding-left:15px;">
+        <a id="createLink" onclick="showCreateDialog();" onmouseover="this.style.cursor='pointer';">
+        <u><span class="bodytxtSmBoldPurple" style="padding-top:5px;">Need an Account?</span>
+        </u>
+
+        </a>
+       </div>
+    <div STYLE="float:right;text-align:right;padding-bottom: 5px">  Secure Sign-in  <img src="http://i.ticketweb.com/img/common/ssl_logo.png" title="secure"/> </div>
+    </div>
+   </div>
+        <div style="clear:both"></div>
+
+
+   <div id="forgotDialog" style="display:none">
+
+    <form name="forgotPasswordForm" method="POST" action="https://www.ticketweb.com/t3/consumer/myticketweb/forgotPasswordRandom">
+      <span id='login_error_msg' class="msg-err" style="display:none">&nbsp;</span>
+      <div style="clear:both"></div>
+    <br>
+    <span align="center" style="color:#420085;font-weight:bold;font-size:17px">Forgot your password ?</span>
+    <div style="clear:both"></div>
+    <br>
+       <span align="center" style="font-size:12px"><label for="email"><strong>Email Address:</strong></label></span>
+
+       <input style="margin-left:10px;font-size:12px" class="inputBorderFix" id="forgotEmail" type="text" name="email" maxlength=32 size=21 />
+       <input type="hidden" id="forgotUrl" name="url" value="">
+       <input type="hidden" id="forgotPl" name="pl" value="">
+       <br>
+       <br>
+    <div style="clear:both">
+    </div>
+    <input type="submit" value="Submit" onclick="submitPassword();return false;"/>
+    <input id="hideForgotPassword" type="Submit" value="Cancel" onclick="return false;"/>
+
+    <br><br>
+    </form>
+    </div>
+   </div>
+
+
+       <div id="logout" style="display:none">
+       <form name=signOutForm method="POST" action="https://www.ticketweb.com/t3/consumer/myticketweb/SignOut">
+
+     <br /><br/>
+     <center>
+
+       <span class="bodytxtLgPurple">Are you sure you want to Sign Out ?</span>
+     </center>
+     <br /><br/>
+     <p>
+       <input type="hidden" id="signoutUrl" name="url" value="">
+       <input type="hidden" id="signoutPl" name="pl" value="">
+       <input type="hidden" id="isBillingPage2" name="billingPageFlag" value="false">
+       <span class="button-group">
+
+     <input id="signin" style="width:40px;float:left;font-size:11px;margin-left:100px;border-width:2px;border-color:#D4D0C8;border-style:outset;" type="submit" value="Yes" onclick="signOut();return false;"/></span> <input id="hideSignOut" style="float:left;font-size:11px;margin-left:30px;border-width:2px;border-color:#D4D0C8;border-style:outset;width:40px;" type="submit" value="No" onclick="return false;"/>
+     </p>
+       <br><br>
+       </form>
+       </div>
+
+
+    <div id="updatePwdDialog" style="display:none">
+        <form name=updatePasswordForm method="POST" style="margin-bottom:30px;" action="https://www.ticketweb.com/t3/consumer/myticketweb/UpdatePassword">
+        <br>
+
+        <span id='u_login_error_msg' class="msg-err" style="display:none">&nbsp;</span>
+        <div style="clear:both"></div>
+        <br>
+        <span align="left" style="color:#420085;font-weight:bold;font-size:17px">Please update your password.</span>
+        <br>
+        <br>
+        <div style="clear:both"></div>
+
+        <label style="float: left; text-align: right; display:block; width: 120px;margin-left:40px;" for="update_email"><strong>Email Address<span class="message-red" style="font-size:16px;color:#CC0000;">*</span>:</strong></label>
+
+       <input style="float: left; margin-left: 10px;font-size:12px" type="text" class="inputBorderFix" type="text" id="update_eml" name="update_email" value="" maxlength=32 size=21 readonly/>
+       <div style="clear:both"></div>
+       <br>
+
+       <label style="float: left; text-align: right; display:block; width: 120px;margin-left:40px;" for="update_password"><strong>Create Password<span class="message-red" style="font-size:16px;color:#CC0000;">*</span>:</strong></label>
+       <input style="float: left; margin-left: 10px;font-size:12px" type="password" class="inputBorderFix" id="update_pwd" name="update_password" value="" maxlength=16 size=21/>
+        <div style="clear:both"></div>
+       <br>
+
+
+       <label style="float: left; text-align: right; display:block; width: 120px;margin-left:40px;" for="update_confPassword"><strong>Confirm Password<span class="message-red" style="font-size:16px;color:#CC0000;">*</span>:</strong></label>
+       <input style="float: left; margin-left: 10px;font-size:12px" type="password" class="inputBorderFix" id="update_confPwd" name="update_confPassword" value="" maxlength=16 size=21/>
+        <div style="clear:both"></div>
+       <input type="hidden" id="update_Url" name="update_url" value="">
+       <input type="hidden" id="update_Pl" name="update_pl" value="">
+       <br>
+      <input type="submit" style="float:left;margin-left:170px;font-size: 11px;margin-bottom:20px;" value="Submit" onclick="updatePassword();return false;"/>
+
+        <br>
+    </form>
+    </div>
+
+<style type="text/css">
+.inputBorderFixCreate{
+    -moz-appearance: textfield;
+    padding: 1px 0 1px 0;
+    border: 2px inset ThreeDFace;
+    background-color: -moz-Field;
+    color: -moz-FieldText;
+    line-height: normal !important;
+    text-rendering: optimizeLegibility;
+}
+</style>
+
+<SCRIPT type="text/javascript">
+
+var c_validateFlag="true";
+var c_loginDialog;
+var c_signOutDialog;
+var statusTitle="Order Status";
+var frontdoorTitle="Welcome to TicketWeb!";
+
+function initCDivs(){
+  $('c_forgotDialog').hide();
+  $('c_consumerLogin').show();
+  $('c_loginDialog').show();
+  $('c_login_error_msg').hide();
+  $('c_fNme').value="";
+  $('c_lNme').value="";
+  $('c_zc').value="";
+  $('c_confEml').value="";
+  $('c_confPwd').value="";
+  $('c_eml').value="";
+  $('c_pwd').value="";
+  $('c_isBillingPage').value="false";
+  $('c_isBillingPage2').value="false";
+}
+
+function extractIFrameCBody(iFrameEl) {
+  /**
+    Reference: michael@mahemoff.com
+    http://ajaxify.com/run/iframe/
+    http://ajaxpatterns.org/IFrame_Call
+
+    under the Creative Commons Licence
+    http://creativecommons.org/licenses/by/2.0/
+  */
+
+  var doc = null;
+  if (iFrameEl.contentDocument) { // For NS6
+    doc = iFrameEl.contentDocument;
+  } else if (iFrameEl.contentWindow) { // For IE5.5 and IE6
+    doc = iFrameEl.contentWindow.document;
+  } else if (iFrameEl.document) { // For IE5
+    doc = iFrameEl.document;
+  } else {
+    return null;
+  }
+  return doc.body;
+
+}
+
+function showCLogin(){
+if(c_loginDialog==null){
+    initCLoginDialog();
+}
+initCDivs();
+ if($('salePayment')!=null){
+    var billingError = $('billingError').value;
+    $('c_login_error_msg').innerHTML=billingError;
+    $('c_login_error_msg').show();
+    $('billingError').value="";
+
+  }
+c_loginDialog.show();
+}
+
+function showCSignOut(){
+if(c_signOutDialog==null){
+    initCSignOut();
+}
+c_signOutDialog.show();
+}
+
+function signCOut()
+{
+   $('c_isBillingPage2').value="false";
+  if($('salePayment')!=null){
+    $('c_isBillingPage2').value="true"
+    document.c_signOutForm.submit();
+  }else{
+   var url = document.c_signOutForm.c_signoutUrl.value;
+   var iFrameBody = extractIFrameBody($("c_signOutFrame"));
+   iFrameBody.innerHTML =
+      "<form action='https://www.ticketweb.com/t3/consumer/myticketweb/SignOut' method='POST'>" +
+        "<input type='text' name='url' value='"+url+"'>" +
+        "<input type='text' name='billingPageFlag' value='false'>" +
+      "</form>";
+   var subForm = iFrameBody.firstChild;
+   subForm.submit();
+ }
+}
+
+
+function submitCform()
+{
+  c_loginDialog.validate();
+
+  if(c_validateFlag == "true"){
+     if($('salePayment')!=null){
+        $('c_isBillingPage').value="true"
+        document.c_loginForm.submit();
+       }else{
+          var fNme = document.c_loginForm.fName.value;
+          var lNme = document.c_loginForm.lName.value;
+          var zc = document.c_loginForm.zip.value;
+          var eml = document.c_loginForm.email.value;
+          var pwd = document.c_loginForm.password.value;
+          var newsltr = document.c_loginForm.newsletter.checked;
+          var splOffrs = document.c_loginForm.specialOffers.checked;
+          //if (document.loginForm.emailFormat1.checked)
+            //  var emlFmt = document.loginForm.emailFormat1.value;
+          //else {
+            //  if (document.loginForm.emailFormat2.checked)
+              //var emlFmt = document.loginForm.emailFormat2.value;
+           //}
+           if(document.c_loginForm.clientComm != null){
+                var cntComm = document.c_loginForm.clientComm.checked;
+           }
+          var url = document.c_loginForm.url.value;
+         var iFrameBody = extractIFrameBody($("c_iFrame"));
+          iFrameBody.innerHTML =null;
+          iFrameBody.innerHTML =  "<form id=\"c_subFrm\" action='https://www.ticketweb.com/t3/consumer/myticketweb/CreateAccount' method='POST'>" +
+          "<input type='text' name='fName' value='"+fNme+"'>"+
+          "<input type='text' name='lName' value='"+lNme+"'>"+
+          "<input type='text' name='zip' value='"+zc+"'>"+
+          "<input type='text' name='email' value='"+eml+"'>" +
+          "<input type='password' name='password' value='"+pwd+"'>" +
+          "<input type='text' name='newsletter' value='"+newsltr+"'>"+
+          "<input type='text' name='specialOffers' value='"+splOffrs+"'>"+
+          "<input type='text' name='clientComm' value='"+cntComm+"'>"+
+          "<input type='text' name='url' value='"+url+"'>" +
+          "<input type='text' name='billingPageFlag' value='false'>" +
+        "</form>";
+          var subForm = iFrameBody.firstChild;
+          subForm.submit();
+    }
+  }
+  else{
+    return false;
+  }
+}
+function displayCCorrectLinks(){
+ /*
+if(checkCookie('MYTW_SIGNEDIN_COOKIE') != null){
+     document.getElementById('c_signOutLink').style.display="none";
+     document.getElementById('c_signedInLink').style.display="";
+}else{
+     document.getElementById('c_signedInLink').style.display="none";
+     document.getElementById('c_signOutLink').style.display="";
+ }
+ //to prevent links from showing up on order status and conf pages
+ var confTitle = "Thank you, your order is complete!";
+ if(//(document.title ==statusTitle)||
+   (document.title ==confTitle)){
+  document.getElementById('c_signOutLink').style.display="none";
+  document.getElementById('c_signedInLink').style.display="none";
+ }
+  */
+}
+
+
+function onIFrameCLoad(){
+ if(c_loginDialog==null){
+   initCLoginDialog();
+ }
+
+ displayCCorrectLinks();
+
+ var subform=extractIFrameBody($("c_iFrame")).getElementsByTagName("textarea");
+ if(subform[0]!=null){
+   var jsonText = subform[0].innerHTML;
+   var jsonObj = eval('(' + jsonText + ')');
+
+   if(jsonObj.status=='SignInError'){
+     showCLogin();
+     $('c_login_error_msg').innerHTML=jsonObj.error;
+     $('c_login_error_msg').show();
+
+    }
+
+   if(jsonObj.status=='SignInOk'){
+       c_loginDialog.hide();
+
+
+       //hackery for reloading Order status page on sign in. so that the alternate will call link can surface
+     if((document.title ==statusTitle)){
+       window.location.reload();
+     }
+     if((document.title == frontdoorTitle)){
+         window.location="http://www.ticketweb.com/t3/consumer/myticketweb/Home";
+         }
+     if((document.title == 'MyTicketWeb Home')){
+         window.location="http://www.ticketweb.com/t3/consumer/myticketweb/Home";
+         }
+
+   }
+}
+}
+
+
+function onSignOutFrameCLoad(){
+ if(c_signOutDialog==null){
+   initCSignOut();
+ }
+
+ displayCCorrectLinks();
+
+ var subform=extractIFrameBody($("c_signOutFrame")).getElementsByTagName("textarea");
+
+ if(subform[0]!=null){
+   var jsonText = subform[0].innerHTML;
+   var jsonObj = eval('(' + jsonText + ')');
+
+   if(jsonObj.status=='SignOutError'){
+     c_signOutDialog.hide();
+    }
+
+   if(jsonObj.status=='SignOutOk'){
+          c_signOutDialog.hide();
+
+      // hackery for reloading Order status page on sign in. so that the alternate will call link can surface
+
+     if((document.title ==statusTitle)){
+       window.location.reload();
+     }
+   }
+ }
+}
+/*
+function showPasswordDialog(){
+c_validateFlag="true";
+$('c_login_error_msg').hide();
+new Effect.Fade('c_loginDialog',{duration:1});
+new Effect.Appear('c_forgotDialog',{duration:3});
+}
+*/
+function showCreateDialog(){
+	    validateFlag="true";
+	    $('login_error_msg').hide();
+	    $('hideLogin').click();
+	    showCLogin();
+ }
+
+function showLogInDialog(){
+	 c_validateFlag="true";
+     $('c_login_error_msg').hide();
+     $('c_hideLogin').click();
+     showLogin();
+}
+function submitCPassword(){
+
+c_loginDialog.validateForgotLink();
+  if(c_validateFlag == "true"){
+
+          var eml = document.c_forgotPasswordForm.c_forgotEmail.value;
+          var url = document.c_forgotPasswordForm.c_url.value;
+          var iFrameBody = extractIFrameBody($("c_iFrame"));
+          iFrameBody.innerHTML =
+              "<form action='https://www.ticketweb.com/t3/consumer/myticketweb/forgotPassword' method='POST'>" +
+                "<input type='text' name='email' value='"+eml+"'>" +
+                "<input type='text' name='url' value='"+url+"'>" +
+              "</form>";
+          var subForm = iFrameBody.firstChild;
+          subForm.submit();
+  }else{
+  return false;
+  }
+}
+
+
+function initCLoginDialog() {
+
+                    // Define various event handlers for Dialog
+                    document.getElementById("c_consumerLogin").style.display="";
+                    //$('c_consumerLogin').show();
+                    var currentUrl = document.location.href;
+                    if(currentUrl.indexOf("pl=")==-1)
+                    {
+                     currentUrl=currentUrl+"&pl="
+                    }
+                    var pLableCode = "";
+                    document.getElementById("c_url").value=currentUrl;
+                    document.getElementById("c_forgotUrl").value=currentUrl;
+
+                    document.getElementById("c_pl").value=pLableCode;
+                    document.getElementById("c_forgotPl").value=pLableCode;
+
+                    // Instantiate the Dialog
+                    c_loginDialog  = new YAHOO.widget.Dialog("c_consumerLogin", {underlay:"matte",effect:{effect:YAHOO.widget.ContainerEffect.FADE,duration:0.45},
+                                                                         width : "600px",draggable:false,modal:true,
+                                                                         fixedcenter : true,
+                                                                         visible : false,
+                                                                         constraintoviewport : true
+                                                            } );
+
+                    c_loginDialog.validateForgotLink = function(){
+
+                    var data = $('c_forgotEmail').value;
+                      if ((!checkEmail(data))||(data=="")) {
+                            $('c_login_error_msg').innerHTML='Please enter a valid email address';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        c_validateFlag="true" ;
+                        return true;
+                    }
+
+                    c_loginDialog.validate = function() {
+                        var data = this.getData();
+
+                        if (data.fName == ""){
+                            $('c_login_error_msg').innerHTML='Please enter your First Name';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.lName == ""){
+                            $('c_login_error_msg').innerHTML='Please enter your Last Name';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.zip == ""){
+                            $('c_login_error_msg').innerHTML='Please enter your Zip Code';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.email == "") {
+                            $('c_login_error_msg').innerHTML='Please enter a valid email address';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.confEmail == "") {
+                            $('c_login_error_msg').innerHTML='Please enter the email address again for confirmation';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.email != data.confEmail){
+                            $('c_login_error_msg').innerHTML='The email addresses entered do not match, please try again';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (!checkEmail(data.email)) {
+                            $('c_login_error_msg').innerHTML='Please enter a valid email address';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.password == "") {
+                            $('c_login_error_msg').innerHTML='Please enter your password';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.confPassword == "") {
+                            $('c_login_error_msg').innerHTML='Please enter your password again for confirmation';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.password != data.confPassword){
+                            $('c_login_error_msg').innerHTML='The passwords entered do not match, please try again';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        if (data.password.length < 5) {
+                            $('c_login_error_msg').innerHTML='Password should be a minimum of 5 characters';
+                            $('c_login_error_msg').show();
+                            c_validateFlag="false" ;
+                            return false;
+                        }
+                        //if (data.emailFormat == ""){
+                          //  $('c_login_error_msg').innerHTML='Please select the Email Format';
+                            //$('c_login_error_msg').show();
+                            //c_validateFlag="false" ;
+                            //return false;
+                        //}
+                        c_validateFlag="true" ;
+                        return true;
+                    };
+
+                     // Wire up the success and failure handlers
+
+                    c_loginDialog.render();
+                    YAHOO.util.Event.addListener("c_hideLogin", "click", c_loginDialog.hide,c_loginDialog,true);
+                    YAHOO.util.Event.addListener("c_hideForgotPassword", "click", c_loginDialog.hide,c_loginDialog,true);
+                }
+
+function initCSignOut() {
+                document.getElementById("c_logout").style.display="";
+                var currentUrl = document.location.href;
+                if(currentUrl.indexOf("pl=")==-1)
+                {
+                  currentUrl=currentUrl+"&pl="
+                }
+
+                var pLableCode = "";
+
+                document.getElementById("c_signoutPl").value=pLableCode;
+                document.getElementById("c_signoutUrl").value=currentUrl;
+
+                    // Instantiate the Dialog
+                     c_signOutDialog= new YAHOO.widget.Dialog("c_logout",  {underlay:"matte",effect:{effect:YAHOO.widget.ContainerEffect.FADE,duration:0.45},
+                                                                         width : "300px",draggable:false,modal:true,
+                                                                         fixedcenter : true,
+                                                                         visible : false,
+                                                                         constraintoviewport : true
+                                                            } );
+
+                    // Render the Dialog
+                    c_signOutDialog.render();
+
+                    YAHOO.util.Event.addListener("c_hideSignOut", "click", c_signOutDialog.hide,c_signOutDialog,true);
+
+                }
+</script>
+
+
+<script type="text/javascript">
+<!--
+/*function checkCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++)
+    {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+    displayCCorrectLinks()*/;
+// -->
+</script>
+<script type="text/javascript">
+<!--
+
+var secureUrl = document.location.href;
+if(secureUrl.indexOf("https")==-1){
+    document.write("<iframe id=\"c_iFrame\" STYLE=\"visibility: hidden;\" height=\"1PX\"></iframe>");
+    document.write("<iframe id=\"c_signOutFrame\" STYLE=\"visibility: hidden;\" height=\"1PX\" ></iframe>");
+}else{
+  document.write("<iframe id=\"c_iFrame\" src=\"/consumer/myticketweb/secure/signouthelper\" STYLE=\"visibility: hidden;\" height=\"1PX\"></iframe>");
+  document.write("<iframe id=\"c_signOutFrame\" src=\"/consumer/myticketweb/secure/signouthelper\" STYLE=\"visibility: hidden;\" height=\"1PX\" ></iframe>");
+
+}
+// -->
+</script>
+  <div id="c_consumerLogin" style="display:none">
+  <br><br>
+  <span id='c_login_error_msg' class="msg-err" style="display:none">&nbsp;</span>
+  <div id="c_loginDialog" style="display:none">
+    <br>
+    <div style="clear:both"></div>
+
+    <span style="float:left;padding-left:35px;color:#420085;font-weight:bold;font-size:17px">Create New Account</span>
+    <span style="float:left;padding-left:180px;color:#420085;font-weight:bold;font-size:12px">Already have an account?</span>
+      <div style="clear:both"></div>
+    <span style="float:right;padding-right:35px;color:#420085;font-weight:bold;font-size:12px"  class="pagelink"><a id="signInNotCreate" onmouseover="this.style.cursor='pointer';" onclick="showLogInDialog();">Log in</a></span>
+    <div id="c_formDiv">
+    <form id="c_lForm" name="c_loginForm" method="POST" action="https://www.ticketweb.com/t3/consumer/myticketweb/CreateAccount">
+      <div style="clear:both"></div>
+
+      <br>
+
+       <label style="float: left; text-align: right; display:block; width: 160px;" for="fName"><strong>First Name<span style="font-size:10px;color:#CC0000;">*</span>:</strong></label>
+       <input class="inputBorderFixCreate" style="float: left; margin-left: 10px;font-size:12px" type="text" type="text" id="c_fNme" name="fName" value="" maxlength=32 size=32/>
+        <div style="clear:both"></div>
+       <br>
+
+        <label style="float: left; text-align: right; display:block; width: 160px;" for="lName"><strong>Last Name<span class="message-red" style="font-size:10px;color:#CC0000;">*</span>:</strong></label>
+
+       <input class="inputBorderFixCreate" style="float: left; margin-left: 10px;font-size:12px" type="text" type="text" id="c_lNme" name="lName" value="" maxlength=32 size=32/>
+        <div style="clear:both"></div>
+       <br>
+
+        <label style="float: left; text-align: right; display:block; width: 160px;" for="zip"><strong>Zip Code<span class="message-red" style="font-size:10px;color:#CC0000;">*</span>:</strong></label>
+       <input class="inputBorderFixCreate" style="float: left; margin-left: 10px;font-size:12px" type="text" type="text" id="c_zc" name="zip" value="" maxlength=10 size=15/>
+       <div style="clear:both"></div>
+       <br>
+
+
+        <label style="float: left; text-align: right; display:block; width: 160px;" for="email"><strong>Email Address<span class="message-red" style="font-size:10px;color:#CC0000;">*</span>:</strong></label>
+       <input class="inputBorderFixCreate" style="float: left; margin-left: 10px;font-size:12px" type="text" type="text" id="c_eml" name="email" value="" maxlength=32 size=42/>
+       <div style="clear:both"></div>
+       <br>
+
+        <label style="float: left; text-align: right; display:block; width: 160px;" for="confEmail"><strong>Confirm Email Address<span class="message-red" style="font-size:10px;color:#CC0000;">*</span>:</strong></label>
+       <input class="inputBorderFixCreate" style="float: left; margin-left: 10px;font-size:12px" type="text" type="text" id="c_confEml" name="confEmail" value="" maxlength=32 size=42/>
+
+        <div style="clear:both"></div>
+       <br>
+
+       <label style="float: left; text-align: right; display:block; width: 160px;" for="password"><strong>Create Password<span class="message-red" style="font-size:10px;color:#CC0000;">*</span>:</strong></label>
+       <input class="inputBorderFixCreate" style="float: left; margin-left: 10px;font-size:12px" type="password" id="c_pwd" name="password" value="" maxlength=16 size=21/>
+        <div style="clear:both"></div>
+       <br>
+
+       <label style="float: left; text-align: right; display:block; width: 160px;" for="confPassword"><strong>Confirm Password<span class="message-red" style="font-size:10px;color:#CC0000;">*</span>:</strong></label>
+
+       <input class="inputBorderFixCreate" style="float: left; margin-left: 10px;font-size:12px" type="password" id="c_confPwd" name="confPassword" value="" maxlength=16 size=21/>
+        <div style="clear:both"></div>
+       <br>
+
+       <label style="float: left; text-align: right; display:block; width: 160px;" for="newsletter"><strong>Newsletter Signup:</strong></label>
+        <div style="float:left;margin-left:5px;margin-right:5px">
+
+
+       <input style="float:left;margin-right:5px;" type="checkbox" id="c_newsltr" name="newsletter" value="" maxlength=32 size=21 checked="checked"/>
+
+
+
+        Email me a weekly list of upcoming events in my area (Don't miss out!!)
+        </div>
+       <div style="clear:both"></div>
+
+       <br>
+
+       <label style="float: left; text-align: right; display:block; width: 160px;" for="specialOffers"><strong>Special Offers:</strong></label>
+        <div style="float:left;margin-left:5px;margin-right:5px">
+
+
+       <input style="float:left;margin-right:5px;" type="checkbox" id="c_splOffrs" name="specialOffers" value="" maxlength=32 size=21 checked="checked"/>
+
+
+
+        Learn about advance ticket sales and other special promotional offers.
+        </div>
+       <div style="clear:both"></div>
+       <br>
+
+
+
+
+       <input type="hidden" id="c_url" name="url" value="">
+
+       <input type="hidden" id="c_pl" name="pl" value="">
+       <input type="hidden" id="c_isBillingPage" name="billingPageFlag" value="false">
+
+       <div style="clear:both"></div>
+       <br>
+       <br>
+      <input type="submit" style="float:left;margin-left:170px;font-size: 11px;" value="Sign In" onclick="submitCform();return false;"/>
+      <script type="text/javascript">
+       <!--
+       if(document.title!="Billing Information"){
+         document.write("<input id=\"c_hideLogin\" style=\"float:left;margin-left:20px;font-size: 11px;\" type=\"submit\" value=\"Cancel\" onclick=\"return false;\"/>");
+        }
+       // -->
+      </script>
+
+     <div style="clear:both"></div>
+     <script type="text/javascript">
+      <!--
+      if(document.title=="Billing Information"){
+        document.write("<div style=\"padding-top:5px\">");
+        document.write("<input id=\"c_hideLogin\" style=\"float:left;margin-left:130px;background-color:#420085;color:#FFFFFF;font-weight:bold;font-size:13px;\" type=\"submit\" value=\"Skip and Continue\" onclick=\"return false;\"/>");
+        document.write("</div>");
+       }
+      // -->
+     </script>
+     <div style="clear:both"></div>
+     <br>
+    </form>
+        <div align="right">  Secure Sign-in  <img src="http://i.ticketweb.com/img/common/ssl_logo.png" title="secure"/> </div>
+    </div>
+   </div>
+
+
+   <div id="c_forgotDialog" style="display:none">
+    <form name="c_forgotPasswordForm" method="POST" action="https://www.ticketweb.com/t3/consumer/myticketweb/forgotPassword">
+      <span id='c_login_error_msg' class="msg-err" style="display:none">&nbsp;</span></p>
+      <div style="clear:both"></div>
+    <br>
+    <span align="center" style="color:#420085;font-weight:bold;font-size:17px">Forgot your password ?</span>
+    <div style="clear:both"></div>
+    <br>
+
+       <span align="center" style="font-size:12px"><label for="email"><strong>Email Address:</strong></label></span>
+       <input style="margin-left:10px;font-size:12px" id="c_forgotEmail" type="text" name="email" maxlength=32 size=21 /></p>
+       <input type="hidden" id="c_forgotUrl" name="url" value="">
+       <input type="hidden" id="c_forgotPl" name="pl" value="">
+       <br>
+    <div style="clear:both">
+    </div>
+    <input type="submit" value="Submit" onclick="submitCPassword();return false;"/>
+
+    <input id="c_hideForgotPassword" type="Submit" value="Cancel" onclick="return false;"/>
+    <br><br>
+    </form>
+    </div>
+   </div>
+
+
+    <div id="c_logout" style="display:none">
+    <form name=c_signOutForm method="POST" action="https://www.ticketweb.com/t3/consumer/myticketweb/SignOut">
+    <br>
+
+    <span class="bodytxtLgPurple">Are you sure you want to Sign Out ?</span>
+    <p>
+    <input type="hidden" id="c_signoutUrl" name="url" value="">
+    <input type="hidden" id="c_signoutPl" name="pl" value="">
+    <input type="hidden" id="c_isBillingPage2" name="billingPageFlag" value="false">
+    <span class="button-group">
+    <input id="c_signin" type="submit" value="Yes" onclick="signCOut();return false;"/></span> <input id="c_hideSignOut" type="submit" value="No" onclick="return false;"/>
+    <br><br>
+
+    </form>
+    </div>
+<!-- DO NOT EDIT above THIS COMMENT -->
+
+<div style="padding:200px;width:820px;">
+<span align="center" class="bodytxtLgPurple">Sorry! A server error has occurred. Please verify the url you have entered and retry. If this error persists, please contact the customer support by clicking on the Help Desk link.</span>
+</div>
+<!-- DO NOT EDIT BELOW THIS COMMENT -->
+
+<table width="820" cellpadding="4" cellspacing="0" border="0">
+<tr>
+<td align="center">
+    <p class="navFooter">
+    <a href="/">HOME</a> |
+    <a href="/snl/Search.action">SEARCH</a> |
+    <a href="http://event.ticketweb.com/about/index.html">ABOUT TICKETWEB</a> |
+    <a href="/t3/sale/OrderStatusFind">ORDER STATUS</a> |
+
+
+
+   	<a href="#" onclick="javascript:window.open('https://www.hostedsupport.com/support/index.cfm?C=1246','XLCSI','scrollbars,top=0,left=0'); return false;">
+
+
+
+    HELP DESK</a> |
+    <a href="/t3/sale/DisplayCart?dispatch=showCart">SHOPPING CART</a> |
+    <a href="http://event.ticketweb.com/about/privacypolicy.html">YOUR PRIVACY POLICY</a>
+    </p>
+<p class="bodytxtSm">&copy; 2008 TicketWeb. All Rights Reserved.</p>
+</td>
+</tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td align="center" class="partner">Partner Sites:&nbsp;
+<a href="http://www.admission.com/" class="partnerlink">Admission</a>&nbsp;|&nbsp;
+<a href="http://www.thecampingclub.com/" class="partnerlink">The Camping Club</a>&nbsp;|&nbsp;
+<a href="http://www.condodirect.com/" class="partnerlink">Condo Direct</a>&nbsp;|&nbsp;
+<a href="http://www.cottonblend.com/" class="partnerlink">Cottonblend</a>&nbsp;|&nbsp;
+<a href="http://www.domania.com/" class="partnerlink">Domania</a>&nbsp;|&nbsp;
+
+<a href="http://www.expedia.com/" class="partnerlink">Expedia</a>&nbsp;|&nbsp;
+<a href="http://www.getsmart.com/" class="partnerlink">GetSmart</a>&nbsp;|&nbsp;
+<a href="http://www.homeconnections.com/" class="partnerlink">HomeConnections</a>&nbsp;|&nbsp;
+<a href="http://www.homeloancenter.com/" class="partnerlink">Home Loan Center</a><br>
+<a href="http://www.hotels.com/" class="partnerlink">Hotels</a>&nbsp;|&nbsp;
+<a href="http://www.hotwire.com/" class="partnerlink">Hotwire</a>&nbsp;|&nbsp;
+
+<a href="http://www.improvenet.com/" class="partnerlink">ImproveNet</a>&nbsp;|&nbsp;
+<a href="http://www.internest.com/" class="partnerlink">iNest</a>&nbsp;|&nbsp;
+<a href="http://www.lendingtree.com/" class="partnerlink">LendingTree</a>&nbsp;|&nbsp;
+<a href="http://www.livedaily.com/" class="partnerlink">LiveDaily</a>&nbsp;|&nbsp;
+<a href="http://www.noisetap.com/" class="partnerlink">Noisetap</a>&nbsp;|&nbsp;
+<a href="http://www.realestate.com/" class="partnerlink">RealEstate</a>&nbsp;|&nbsp;
+
+<a href="http://www.reserveamerica.com/" class="partnerlink">ReserveAmerica</a>&nbsp;|&nbsp;
+<a href="http://www.servicemagic.com/" class="partnerlink">ServiceMagic</a>&nbsp;|&nbsp;
+<a href="http://www.ticketmaster.com/" class="partnerlink">Ticketmaster</a>&nbsp;|&nbsp;
+<a href="http://www.veryshortlist.com/" class="partnerlink">Very Short List</a>
+<br><br>
+</td></tr>
+</table>
+
+
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,777 @@
+body {
+	background-image: url(images/bg.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-color: #000;
+}
+#wrapper {
+	width: 890px;
+
+	margin: 0 autoheight: 69pxbackground-image: url(images/footerlogo.png)text-indent: -9999pxwidth: 183pxdisplay: blockmargin-top: 20pxoverflow: hidden;
+	position: relative;
+	top: 5px;
+	margin: 0 auto;
+}
+
+#header_wrap {
+	width: 1172px;
+	margin: 0 auto;
+}
+.logo {
+	background-image: url(images/logo.png);
+	text-indent: -9999px;
+	display: block;
+	height: 207px;
+	width: 700px;
+	position: relative;
+	right: 140px;
+	top: 5px;
+}
+.email {
+	font-family: Georgia, times, serif;
+	font-size: 14px;
+	margin-top: 10px;
+	position: absolute;
+	top: -210px;
+        width: 360px;
+	right: 0px;
+}
+
+.email p{
+margin-right: 10px;
+}
+
+.e2ma_signup_form_element{
+float: left;
+margin-right: 10px;
+}
+input.emailsignup, .e2ma_signup_form_element input {
+	background-image: url(images/signup_bg.png);
+	height: 20px;
+	width: 112px;
+	border: 0px;
+	color: #b7b7b7;
+	font-size: 10px;
+        float: left;
+	text-align: center;
+	padding: 0 15px;
+}
+.email input.submit, #e2ma_signup_submit_button {
+	font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	background-color: #8e0034;
+	color: white;
+	border: 0px;
+        float: left;
+	text-transform: uppercase;
+	padding: 3px;
+}
+#navigation {
+	background-image: url(images/navbg.png);
+	height: 34px;
+        width: 925px !important;
+        margin-left: -15px !important;
+	margin-bottom: 15px;
+}
+#navigation .menu {
+	margin: 0;
+	font-size: 18px;
+	list-style: none;
+}
+#navigation .menu li {
+	list-style: none;
+        float: left;
+        height: 34px;
+	border-right: 1px solid white;
+}
+
+.menu #menu-item-27{
+border-right: 0px !important;
+}
+
+#navigation .menu li ul {
+	position: absolute;
+	width: 13em;
+        background-image: url(images/navbg.png);
+        display: block;
+	left: -999em;
+        margin-top: 34px;
+        margin-left: 0px;
+}
+
+.menu li ul li{
+height: 34px;
+border-right: 0px !important;
+}
+
+.menu *{
+z-index: 9999 !important;
+}
+
+#navigation .menu li:hover ul, 
+#navigation .menu li.sfhover ul {
+	left: auto;
+
+}
+
+#rotator {
+	background-image: url(images/rotator.png);
+	height: 156px;
+	width: 676px;
+	margin-bottom: 15px;
+	padding: 3px 5px;
+}
+
+
+
+
+#navigation .menu li a {
+	list-style: none;
+	font-size: 14px;
+	float: left;
+	display: block;
+	height: 12px;
+	padding: 6px 31px 9px 31px;
+	text-decoration: none;
+	text-transform: uppercase;
+        margin-top: 5px;
+	font-family: "Rockwell", times, serif;
+}
+#social {
+	margin-bottom: 20px;
+}
+
+#frontleft{
+float: left;
+width: 687px;	
+margin-right: 31px;
+}
+#calendar_inner {
+	background-image: url(images/calendar_bg.png);
+	height: 566px;
+	width: 666px;
+	margin-bottom: 30px;
+	background-color: #e1e1d7;
+}
+#news .post {
+	padding: 20px;
+	border-bottom: 1px dotted white;
+}
+#news .post h2, #news .post h2 a {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #ff6699;
+	margin-bottom: 3px;
+}
+#news .postmetadata {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	color: #e1e1e1;
+	margin-bottom: 10px;
+}
+#news .post .entry p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #e1e1e1;
+}
+
+
+
+
+#frontright{
+	width: 169px;
+	float: right;
+}
+.comingup {
+	padding: 0 15px;
+}
+#wrapper h4, .pagetitle{
+	font-size: 19px;
+	background-image: url(images/h4bg.png);
+	height: 22px;
+	padding-left: 22px;
+	background-repeat: no-repeat;
+	background-position: 3px left;
+	padding-bottom: 4px;
+	margin-bottom: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: white;
+	text-transform: uppercase;
+}
+.twittertitle {
+	background-image: url(images/12thtwitter.png);
+	text-indent: -9999px;
+	display: block;
+	height: 70px;
+	width: 164px;
+	margin-left: -1px;
+}
+#a12thtwitter {
+	background-image: url(images/twitterbg.png);
+	width: 167px;
+	margin-top: 25px;
+        border-bottom: 5px solid black;
+}
+ul.twitter{
+	margin: 5px 15px 15px 5px;
+	list-style: none;
+        width: 137px !important;
+	font-size: 12px;
+	line-height: 15px;
+	background-color: black;
+	padding: 8px;
+        word-wrap: break-word;
+}
+ul.twitter li a, ul.twitter li {
+	line-height: 15px;
+	margin-bottom: 15px;
+	color: #f26d7d;
+}
+
+
+ul.twitter li span {
+	font-size: 10px;
+	display: block;
+	color: white;
+}
+.followus {
+	background-image: url(images/followus.png);
+	height: 29px;
+	width: 157px;
+	display: block;
+	text-indent: -9999px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+#footer {
+	background-image: url(images/footerbg.png);
+	background-position: center bottom;
+	height: 98px;
+	margin-top: 30px;
+}
+a.footer_logo {
+	background-image: url(images/footerlogo.png);
+	text-indent: -9999px;
+	display: block;
+	height: 69px;
+	width: 183px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+#footernav {
+	width: 585px;
+	position: relative;
+	top: 35px;
+	left: 282px;
+}
+
+
+.footer_wrap {
+	width: 960px;
+	margin: 0 auto;
+}
+.footer_meta{
+font-size: 9px;
+color: #464646;
+margin-top:40px;
+text-align: right;
+}
+#footernav .menu a{
+	font-size: 10px;
+	color: #790026; 
+        padding-bottom: 5px;
+        position: relative;
+        top: -3px;
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+}
+#footernav .menu li {
+	display: block;
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+	list-style: none;
+	float: left;
+	padding-right: 5px;
+	margin-right: 5px;
+	border-right: 1px solid #790026;
+}
+#content {
+	min-height: 500px;
+padding-top: 10px;
+}
+
+.comingup ul{
+margin: 0px;
+list-style: none;
+}
+
+.page .entry{
+margin-top: 10px;
+}
+
+.page .entry p, 
+.page .entry ol,
+.page .entry ul,
+.page .entry li{
+font-size: 13px;
+padding-bottom: 10px;
+}
+
+td.calendar-heading{
+background-color: black !important;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.page-id-21 table{
+padding: 5px;
+}
+
+.page-id-21 table *{
+border: 0 !important;
+background-color: transparant !important;
+}
+
+td.normal-day-heading, td.weekend-heading{
+background-color: #252525;
+}
+
+td.calendar-heading{
+font-family: georgia, times, serif;
+font-size: 30px;
+}
+
+td.day-with-date, td.current-day{
+background-color: #de6574;
+border: 3px solid #252525 !important;
+min-height: 118px !important;
+}
+
+.kjo-link p, .enddate{
+display: none !important;
+}
+
+.weekend-heading{
+color: white !important;
+}
+
+td.day-with-date span, td.current-day span, span.weekend{
+font-size: 22px;
+color: white !important;
+padding: 4px;
+display: block;
+font-family: Georgia, times, serif;
+font-weight: bold;
+float: right;
+}
+
+.entry p{
+font-size: 12px !important;
+line-height: 16px;
+}
+
+.entry h3{
+font-family: "Rockwell", times, serif !important;
+color: #ed145b;
+font-size: 14px;
+text-transform: uppercase;
+}
+
+.tubepress_thumb img{
+border: 1px solid #000;
+}
+.tubepress_thumb  .tubepress_meta_title a, .tubepress_thumb .tubepress_meta_title a:hover{
+text-decoration: none;
+position: relative;
+top: -50px;
+background-color: black;
+display: block;
+padding: 5px;
+   filter: alpha(opacity=80);
+   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+   -moz-opacity: 0.80;
+   opacity:0.8;
+width: 190px;
+font-size: 10px;
+font-family: Georgia, times, serif;
+font-weight: normal;
+line-height: 12px;
+margin-left: 2px;
+}
+
+#videometa{
+width: 220px;
+border: 1px solid #000;
+padding: 10px;
+}
+
+#videometa h2{
+color: #f26d7d;
+font-family: Georgia, times, serif;
+font-weight: bold;
+}
+
+p.eventdeets{
+text-transform: uppercase;
+font-size: 10px !important;
+display: block;
+border-bottom: 1px dotted #999;
+padding-bottom: 5px;
+}
+
+.buytix{
+display: block;
+width: 101px;
+height: 21px;
+background-image: url(images/tickets.png);
+text-indent: -9999px;
+}
+
+.single .buytix{
+background-image: url(images/tickets_single.png) !important;
+height: 22px !important;
+margin-bottom: 15px;
+}
+
+.entry p{
+padding-bottom: 13px;
+}
+
+.single h2.pagetitle{
+border-bottom: 0px !important;
+background-image: none !important;
+padding: 0px !important;
+color: #f26d7d;
+font-size: 22px !important;
+font-family: georgia, times, serif;
+margin-bottom: 10px;
+text-transform; capitalize !important;
+font-weight: bold;
+}
+
+.single .eventdeets{
+border-bottom: 0px !important;
+margin-bottom: 10px;
+}
+
+.single h5{
+background-image: url(images/checkout.png);
+height: 20px;
+width: 478px;
+color: white;
+font-family: Rockwell, Georgia, Times, serif;
+font-size: 16px;
+text-transform: uppercase;
+padding-top: 7px;
+padding-left: 15px;
+margin-bottom: 15px;
+}
+
+.single h6{
+font-family: georgia, times, serif;
+font-size: 14px !important;
+display: block;
+padding-left: 15px;
+font-weight: bold;
+padding-bottom: 10px !important;
+}
+
+.single h6 a{
+color: #db026a;
+font-weight: bold;
+}
+
+#post-72 .gallery img{
+border: 0px !important;
+}
+
+.col1, .ical .Month, .ical .map, .ical .addevent, .ical .location{
+display: none;
+}
+
+#calendar_inner, #calendar_inner a{
+color: black;
+}
+
+#calendar_inner{
+padding: 10px;
+}
+
+.ical ul{
+list-style: none;
+margin: 0px;
+}
+.ical li{
+display: block;
+width: 198px;
+margin-right: 10px;
+border: 2px dotted black;
+padding: 5px;
+margin-bottom: 10px;
+height: 255px;
+position: relative;
+float: left;
+}
+
+.ical li img{
+width: auto;
+display: block;
+margin: 10px auto;
+position: absolute;
+top: 15px;
+width: 195px;
+margin-left: 2px;
+clip: rect(0px, 195px, 120px, 0px)
+}
+
+.ical a.url{
+color: #9e0138 !important;
+text-decoration: none;
+font-family: Georgia, times, serif;
+font-size: 10px;
+display: block;
+margin: 130px 0 5px 0;
+}
+
+.amrcol1{
+font-size: 10px;
+text-transform: uppercase;
+display: block;
+margin-bottom: 10px;
+}
+
+
+.abbr{
+border: 0px !important;
+text-decoration: none !important;
+}
+
+.endtime{
+display: none;
+}
+
+.starttime{
+float: right;
+}
+
+
+.ical br{
+display: none;
+}
+
+.description a{
+display: block;
+background-image: url(http://dev.studionashvegas.com/12thporter/wp-content/uploads/2010/10/tickets_grey.png);
+width: 99px;
+height: 20px;
+text-indent: -9999px;
+margin-top: 10px;
+position: absolute;
+bottom: 8px;
+right: 5px;
+}
+
+.description{
+font-size: 11px;
+line-height: 12px !important;
+display: block;
+}
+
+#e2ma_signup_reset_button, .e2ma_signup_form_label, .e2ma_signup_form_required_footnote, #calendar_inner span em, #e2ma_signup_image, .e2ma_signup_message{
+display: none;
+}
+
+.dtstart, .starttime{
+font-weight: bold;
+}
+
+
+#media_right {
+	width: 666px;
+	float: right;
+	margin-right: 20px;
+}
+
+#media_right .top{
+	background-image: url(images/glass_top.png);
+	height: 36px;
+}
+
+#media_right .bottom{
+	background-image: url(images/glass_bottom.png);
+	height: 33px;
+}
+
+#media_right .middle{
+	background-image: url(images/glass_middle.png);
+}
+
+#media_right .middle .post{
+padding: 0 20px;	
+}
+
+#media_left{
+	width: 170px;
+	float: left;
+	margin-left: 20px;
+font-size: 13px;
+margin-top: 35px;
+}
+
+#media_left p{
+	line-height: 19px;
+	margin-top: 15px;
+}
+
+.page-id-23 .pagetitle{
+margin-bottom: 20px;
+}
+
+.lightingpic{
+width: 337px;
+}
+
+.lightinginfo{
+width: 530px;
+margin-bottom: 40px;
+}
+
+.sub-menu a{
+border-right: 0px !important;
+}
+
+#footer .menu li li{
+display: none;
+}
+
+#footer .menu .menu-item-27{
+border-right: 0px;
+}
+
+.tubepress_container{
+margin: 0px !important;
+margin-top: -25px !important;
+padding: 0px !important;
+height: 200px !important;
+}
+
+
+
+.page-id-23 .tubepress_thumb img{
+width: 200px;
+
+}
+
+.page-id-23 .tubepress_meta_title{
+position: relative;
+left: 23px;
+}
+
+.page-id-23 .entry p, .page-id-23 .entry li{
+font-size: 12px !important;
+padding-bottom: 5px !important;
+}
+
+.page-id-23 .entry ul{
+padding-bottom: 5px !important;
+}
+
+.page-id-23 .entry li{
+margin-bottom: 0px !important;
+padding-bottom: 5px !important;
+}
+
+.old-date-holder{
+background-color: black !important;
+color: black !important;
+height: 22px !important;
+}
+
+.date-holder{
+color: #db6371 !important;
+background-color: black !important;
+font-size: 12px;
+padding-right: 5px;
+height: 22px !important;
+width: 118px !important;
+}
+
+.ics-calendar-table td{
+background-color: #db6371 !important;
+}
+
+.ics-calendar-holder{
+border: 0px !important;
+background-color: black !important;
+}
+
+
+
+.ics-calendar-event {
+	cursor:pointer;
+	width:115px !important;
+	overflow:visible !important;
+	white-space:normal !important;
+	font-size:10px;
+padding: 4px 4px 10px 4px;
+}
+
+
+.ics-calendar-table td {
+	background: #FFFFFF;
+	height:80px !important;
+	vertical-align:top;
+	display:table-cell;
+	overflow:visible !important;
+	font-size:10px;
+        border: 1px solid #ba025a !important;
+        word-wrap: break-word !important;
+}
+
+.ics-calendar-days td{
+background-color: black !important;
+text-decoration: lowercase !important;
+border: 0px !important;
+height: 20px !important;
+}
+
+.ics-calendar-table {
+	width:100%;
+	background:#000 !important;
+	table-layout: fixed;
+}
+
+
+.biznae{
+font-size: 24px !important;
+text-transform: inherit !important;
+}
+
+.page-id-25 strong{
+font-family: helvetica, arial, sans-serif;
+font-size: 10px;
+}
+
+.page-id-25 .entry p{
+font-size: 14px !important;
+line-height: 14px;
+}
+
+
+
+#rotator{
+z-index: -1;
+}
+
+.ics-calendar-event-box{
+color: black !important;
+}
+
+.directiontext{
+width: 340px;
+}
+
+#calnav{
+display: none;
+}
