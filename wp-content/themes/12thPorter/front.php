@@ -22,10 +22,25 @@ Template Name: Front
     <script type="text/javascript" src="http://www.ticketweb.com/snl/eventlist/TWEventAPIPlugin.js"></script>
     <script type="text/javascript">
       TwEventList.create("calendar_inner", {
-        dataUrl : "http://www.ticketweb.com/snl/EventAPI.action?key=L8riEir5Jf4czPX211i5&version=1&venueId=25638&method=json"
+        resultsPerPage: 6,
+        dataUrl : "http://www.ticketweb.com/snl/EventAPI.action?key=L8riEir5Jf4czPX211i5&version=1&venueId=25638&method=json",
+        template:'<div class="image-col">\
+            <img alt="Artist" src="%eventimagelarge%">\
+        </div>\
+        <div class="event-col">\
+          <span class="name">\
+            <a target="_blank" href="%eventurl%">%eventname%</a>\
+          </span>\
+          <span class="tw-event-time">%start_date_month% %start_date_day%, %start_date_year%&nbsp;|&nbsp;%start_time%&nbsp;|&nbsp;%eventprice%\
+        </div>\
+        <div class="action-col">\
+          <span class="name">\
+            <a class="tw-fb-attend" target="_blank" href="%facebookurl%">Facebook</a>\
+            <a class="tw-get-tickets" target="_blank" href="%eventurl%">Get Tickets</a>\
+         </span>\
+        </div>'
       });
     </script>
-
   </div>
   
   <div id="news">

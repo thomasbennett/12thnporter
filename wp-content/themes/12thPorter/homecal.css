@@ -1,0 +1,57 @@
+/* homepage calendar styles - KMR */
+#calendar_inner {
+ 	background-repeat: repeat;
+ 	height: 596px;
+ }
+ #LIST_VIEW {
+ 	margin: 0 !important;
+ }
+ #LIST_VIEW li {
+ 	border: 1px dotted #333;
+ 	float: left !important;
+ 	list-style-type: none !important;
+ 	margin-bottom: 5px;
+ 	min-height: 285px;
+ 	padding: 4px !important;
+ 	position: relative;
+ 	width: 212px !important;
+ }
+ .image-col {
+ 	height: 140px !important;
+ 	overflow: hidden !important;
+ 	width: 212px !important;
+ }
+ span.name a {
+ 	color: #9f0031 !important;
+ 	display: inline-block;
+ 	font-family: Georgia !important;
+ 	font-size: 1.2em !important;
+ 	margin: 10px 0 5px;
+ 	text-decoration: none;
+ }
+ .tw-event-time {
+ 	color: #110f03;
+ 	font-family: Georgia !important;
+ 	font-size: 1em;
+ }
+ .cal {
+ 	background: none !important;
+ }
+ .tw-fb-attend {
+ 	background: transparent url('images/fb-attend.jpg') no-repeat 0 0;
+ 	bottom: 4px;
+ 	height: 21px;
+ 	left: 4px;
+ 	position: absolute;
+ 	text-indent: -9999px;
+ 	width: 99px;
+ }
+ .tw-get-tickets {
+ 	background: transparent url('images/get-tickets.jpg') no-repeat 0 0;
+ 	bottom: 4px;
+ 	height: 21px;
+ 	position: absolute;
+ 	right: 4px;
+ 	text-indent: -9999px;
+ 	width: 99px;
+}
